@@ -15,11 +15,11 @@ class Configuration():
         """
 
         with open('defaults.yml', 'r') as config_file:
-            default_config = yaml.load(config_file)
+            default_config = yaml.safe_load(config_file)
 
         if os.path.isfile('config.yml'):
             with open('config.yml', 'r') as config_file:
-                user_config = yaml.load(config_file)
+                user_config = yaml.safe_load(config_file)
         else:
             user_config = dict()
 
